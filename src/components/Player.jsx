@@ -4,14 +4,14 @@ export default function Player() {
   
   const playerName = useRef();
   const [name, setName] = useState("");
-  
+
   function ClickHandler(){
     setName(playerName.current.value);
   }
 
   return (
     <section id="player">
-      <h2>Welcome {name ?? "unknown entity" }</h2>
+      <h2>Welcome {name ? name : "unknown entity" }</h2>
       <p>
         <input ref={playerName} type="text" />
         <button onClick={ClickHandler}>Set Name</button>
